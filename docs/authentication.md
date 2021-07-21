@@ -2,15 +2,14 @@
 description: Learn about authentication patterns in Next.js apps and explore a few examples.
 ---
 
-# Authentication
+# 身份证明
+身份验证验证用户是谁，再授权控制用户可以访问什么。Next.js支持多种身份验证模式，每种模式都是为不同的实际情况而设计的。本页面将详细介绍每种模式，以便您可以根据您的具体条件进行选择。  
 
-Authentication verifies who a user is, while authorization controls what a user can access. Next.js supports multiple authentication patterns, each designed for different use cases. This page will go through each case so that you can choose based on your constraints.
+## 身份验证模式
 
-## Authentication Patterns
+确定您需要哪种身份验证模式的第一步是了解您想要的[数据获取策略](/docs/basic-features/data-fetching.md)。然后我们可以确定哪些身份验证提供者支持此策略。主要有两种模式：
 
-The first step to identifying which authentication pattern you need is understanding the [data-fetching strategy](/docs/basic-features/data-fetching.md) you want. We can then determine which authentication providers support this strategy. There are two main patterns:
-
-- Use [static generation](/docs/basic-features/pages.md#static-generation-recommended) to server-render a loading state, followed by fetching user data client-side.
+- 使用 [静态生成](/docs/basic-features/pages.md#static-generation-recommended) 以使服务器呈现加载状态，然后从客户端获取用户数据。
 - Fetch user data [server-side](/docs/basic-features/pages.md#server-side-rendering) to eliminate a flash of unauthenticated content.
 
 ### Authenticating Statically Generated Pages
